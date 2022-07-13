@@ -1,4 +1,4 @@
-# virtual-museum
+# get-inspired
 
 ## Project setup
 ```
