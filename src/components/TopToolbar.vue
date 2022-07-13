@@ -2,13 +2,16 @@
 <template>
   <div>
 
-    <v-navigation-drawer
-      app
-      fixed
-      v-model="showMenu"
-      dark
-    >
+    <v-navigation-drawer app fixed v-model="showMenu" dark>
       <v-list dense>
+        <v-list-item @click="doNothing">
+          <v-list-item-action>
+          </v-list-item-action>
+          <v-list-item-content>
+             <v-img src="..\src\assets\logo-horizontal.svg" max-width="100px"></v-img>
+          </v-list-item-content>
+        </v-list-item>
+       
         <v-list-item @click="doNothing">
           <v-list-item-action>
             <v-icon>settings</v-icon>
@@ -28,20 +31,14 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      fixed
-      dark
-    >
+    <v-app-bar app fixed dark elevation="0">
       <v-app-bar-nav-icon @click.stop="toggleMenu"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Get inspired</v-toolbar-title>
+      <v-toolbar-title>{{ $route.meta.title || "Default title" }}</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
+      <v-img src="../assets/logo-horizontal.svg" max-width="100px"></v-img>
 
     </v-app-bar>
 

@@ -13,24 +13,36 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/wallpapers',
       name: 'wallpapers',
-      component: WallpapersView
+      component: WallpapersView,
+      meta: {
+        title: 'Wallpapers'
+      }
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: LoginView,
+      meta: {
+        title: 'Login'
+      }
     },
     {
       path: '/register',
       name: 'register',
-      component: RegisterView
+      component: RegisterView,
+      meta: {
+        title: 'Register'
+      }
     },
     {
       path: '/quotes',
       name: 'quotes',
-      component: QuotesView
+      component: QuotesView,
+      meta: {
+        title: 'Quotes'
+      }
     }
   ]
 });

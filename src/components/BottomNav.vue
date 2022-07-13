@@ -3,7 +3,8 @@
   <v-bottom-navigation
     grow
     v-model="activeItem"
-    color="light-grey"
+    dark
+    app
   >
   
   <v-tooltip top color="black">
@@ -12,7 +13,7 @@
           icon
           plain
           value="top"
-          :to="{path: '/'}"
+          :to="{name: 'wallpapers'}"
           v-bind="attrs"
           v-on="on"
         >
