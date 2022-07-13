@@ -1,6 +1,4 @@
-# getinspired
-
-<img src=”![gibanner](https://user-images.githubusercontent.com/63070206/178849189-54706297-7dcc-4997-8833-8d3cd189b77e.png)" alt=”getinspired-banner”>
+![gibanner](https://user-images.githubusercontent.com/63070206/178849189-54706297-7dcc-4997-8833-8d3cd189b77e.png)
 
 ## Project setup
 ```
