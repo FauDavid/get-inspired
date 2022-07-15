@@ -10,11 +10,11 @@ export default {
       randomGenerated: 0,
       saveImage: '',
       showAlert: false,
-      numImagesAvailable: 988,
+      numImagesAvailable: 219,
       numItemsToGenerate: 1,
       collectionID: 928423,
       desktopDimension: "1920x1080",
-      mobileDimension: "1440x2600",
+      mobileDimension: "1440x2800",
     };
   },
   computed: {
@@ -35,7 +35,7 @@ export default {
       // link.click();
     },
     fetchImage() {
-      this.randomGenerated = Math.floor(Math.random() * 219);
+      this.randomGenerated = Math.floor(Math.random() * this.numImagesAvailable);
       this.fetchedImage = `https://source.unsplash.com/collection/${this.collectionID}/${this.desktopDimension}?sig=${this.randomGenerated}`;
       axios.get(this.fetchedImage).then((response) => this.saveImage = response.data)
       this.fetchedImageMobile = `https://source.unsplash.com/collection/${this.collectionID}/${this.mobileDimension}?sig=${this.randomGenerated}`;

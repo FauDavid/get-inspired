@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import LoginView from '../views/LoginView.vue';
+import DashboardMenu from '../components/DashboardMenu.vue'
+import HomeView from '../views/HomeView.vue';
 import WallpapersView from '../views/WallpapersView.vue';
 import QuotesView from '../views/QuotesView.vue';
-import LoginView from '../views/LoginView.vue';
-import RegisterView from '../views/RegisterView.vue';
+import MusicView from '../views/MusicView.vue';
 
 Vue.use(Router);
 
@@ -13,15 +15,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/wallpapers',
-      name: 'wallpapers',
-      component: WallpapersView,
-      meta: {
-        title: 'Wallpapers'
-      }
-    },
-    {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: LoginView,
       meta: {
@@ -29,20 +23,46 @@ export default new Router({
       }
     },
     {
-      path: '/register',
-      name: 'register',
-      component: RegisterView,
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardMenu,
       meta: {
-        title: 'Register'
-      }
-    },
-    {
-      path: '/quotes',
-      name: 'quotes',
-      component: QuotesView,
-      meta: {
-        title: 'Quotes'
-      }
+        title: 'Dashboard'
+      },
+      children: [
+        {
+          path: '/dashboard/home',
+          name: 'home',
+          component: HomeView,
+          meta: {
+            title: 'Home'
+          },
+        },
+        {
+          path: '/dashboard/wallpapers',
+          name: 'wallpapers',
+          component: WallpapersView,
+          meta: {
+            title: 'Wallpapers'
+          },
+        },
+        {
+          path: '/dashboard/quotes',
+          name: 'quotes',
+          component: QuotesView,
+          meta: {
+            title: 'Quotes'
+          },
+        },
+        {
+          path: '/dashboard/music',
+          name: 'music',
+          component: MusicView,
+          meta: {
+            title: 'Music'
+          },
+        }
+      ]
     }
   ]
 });

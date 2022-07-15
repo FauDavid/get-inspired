@@ -1,17 +1,16 @@
 <!-- eslint-disable @typescript-eslint/no-empty-function -->
 <template>
   <div>
-
     <v-navigation-drawer app fixed v-model="showMenu" dark>
       <v-list dense>
         <v-list-item @click="doNothing">
           <v-list-item-action>
           </v-list-item-action>
           <v-list-item-content>
-             <v-img src="..\src\assets\logo-horizontal.svg" max-width="100px"></v-img>
+            <v-img src="..\src\assets\logo-horizontal.svg" max-width="100px"></v-img>
           </v-list-item-content>
         </v-list-item>
-       
+
         <v-list-item @click="doNothing">
           <v-list-item-action>
             <v-icon>settings</v-icon>
@@ -20,12 +19,22 @@
             <v-list-item-title>Settings</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
         <v-list-item @click="doNothing">
           <v-list-item-action>
             <v-icon>help</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Help</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click="logout">
+          <v-list-item-action>
+            <v-icon>logout</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -55,6 +64,9 @@
     }
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     doNothing(): void {
+    }
+    logout(): void {
+      this.$router.replace({ name: 'login' })
     }
   }
 </script>
